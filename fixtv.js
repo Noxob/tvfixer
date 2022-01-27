@@ -1,7 +1,4 @@
 $(function(){
-    chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
-        console.log(response.farewell);
-      });
     console.log("tvfixer started working")
     setInterval(tvFixer, 1000);
 });
