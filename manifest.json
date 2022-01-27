@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "TV Fixer",
+    "version": "0.1.0",
+    "description": "It fixes the TV",
+	"browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/tv16.png",
+            "24": "images/tv24.png",
+            "32": "images/tv32.png"
+        }
+    },
+    "content_scripts": [
+        { "run_at":"document_start",
+          "matches": ["*://*.tradingview.com/*"],
+          "js": ["jquery36.js", "fixtv.js"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "alarms",
+        "browsingData",
+        "clipboardRead",
+        "clipboardWrite",
+        "storage",
+        "*://*.tradingview.com/*"
+    ]
+}
